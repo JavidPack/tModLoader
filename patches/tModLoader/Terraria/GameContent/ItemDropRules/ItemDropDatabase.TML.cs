@@ -223,7 +223,6 @@ namespace Terraria.GameContent.ItemDropRules
 			RegisterToItem(item, ItemDropRule.NotScalingWithLuck(ItemID.DukeFishronMask, 7));
 			RegisterToItem(item, ItemDropRule.NotScalingWithLuck(ItemID.FishronWings, 10));
 			RegisterToItem(item, ItemDropRule.OneFromOptionsNotScalingWithLuck(1, 2611, 2624, 2622, 2621, 2623));
-			RegisterToItem(item, ItemDropRule.Common(ItemID.SilverCoin, 1, 20, 20));
 			RegisterToItem(item, ItemDropRule.CoinsBasedOnNPCValue(NPCID.DukeFishron));
 		}
 
