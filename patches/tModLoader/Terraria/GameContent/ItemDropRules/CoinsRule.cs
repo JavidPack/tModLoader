@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 
 namespace Terraria.GameContent.ItemDropRules
@@ -18,6 +20,10 @@ namespace Terraria.GameContent.ItemDropRules
 
 		public ItemDropAttemptResult TryDroppingItem(DropAttemptInfo info) {
 			double scale = 1f;
+			if (Main.expertMode || Main.masterMode || Main.GameModeInfo.IsJourneyMode && CreativePowerManager.Instance.GetPower<CreativePowers.DifficultySliderPower>().StrengthMultiplierToGiveNPCs >= 2f) {
+				scale += 1.5f;
+			}
+
 			if (withRandomBonus) {
 				scale += info.rng.Next(-20, 21) * .01f;
 				if (info.rng.Next(5) == 0) scale += info.rng.Next(5, 11) * .01f;
